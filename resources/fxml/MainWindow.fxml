@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane minHeight="360.0" minWidth="440.0" prefHeight="360.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MainWindowController">
+   <children>
+      <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="78.0" prefWidth="148.0" StackPane.alignment="TOP_CENTER">
+         <children>
+            <Label alignment="TOP_CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" text="Input" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="inputField" maxHeight="-Infinity" maxWidth="-Infinity" onKeyTyped="#inputOnKeyTyped" prefHeight="25.0" prefWidth="170.0" />
+         </children>
+         <StackPane.margin>
+            <Insets top="20.0" />
+         </StackPane.margin>
+      </VBox>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="117.0" prefWidth="100.0" spacing="30.0" StackPane.alignment="CENTER_LEFT">
+         <children>
+            <Label text="Input Scale">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <RadioButton mnemonicParsing="false" onAction="#inputScaleAction" selected="true" text="Celcius">
+               <toggleGroup>
+                  <ToggleGroup fx:id="inputScale" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton mnemonicParsing="false" onAction="#inputScaleAction" text="Fahrenheit" toggleGroup="$inputScale" />
+            <RadioButton mnemonicParsing="false" onAction="#inputScaleAction" text="Kelvin" toggleGroup="$inputScale" />
+         </children>
+         <StackPane.margin>
+            <Insets left="30.0" />
+         </StackPane.margin>
+      </VBox>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="115.0" prefWidth="100.0" spacing="30.0" StackPane.alignment="CENTER_RIGHT">
+         <children>
+            <Label text="Output Scale">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <RadioButton mnemonicParsing="false" onAction="#outputScaleAction" text="Celcius">
+               <toggleGroup>
+                  <ToggleGroup fx:id="outputScale" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton mnemonicParsing="false" onAction="#outputScaleAction" selected="true" text="Fahrenheit" toggleGroup="$outputScale" />
+            <RadioButton mnemonicParsing="false" onAction="#outputScaleAction" text="Kelvin" toggleGroup="$outputScale" />
+         </children>
+         <StackPane.margin>
+            <Insets right="30.0" />
+         </StackPane.margin>
+      </VBox>
+      <Label fx:id="validationLabel" textFill="RED" StackPane.alignment="BOTTOM_CENTER" />
+      <VBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="64.0" prefWidth="148.0" StackPane.alignment="BOTTOM_CENTER">
+         <children>
+            <Label alignment="TOP_CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" text="Output" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="outputField" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" />
+         </children>
+         <StackPane.margin>
+            <Insets bottom="40.0" />
+         </StackPane.margin>
+      </VBox>
+   </children>
+</StackPane>
